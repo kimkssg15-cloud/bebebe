@@ -1,0 +1,140 @@
+body {
+    background-color: rgb(245, 235, 255);
+    color: rgb(60, 40, 80);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none; /* убираем маркеры */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: rgb(120, 40, 160);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 14px;
+    background-color: rgb(235, 210, 250);
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(170, 90, 210);
+}
+
+h1 {
+    color: rgb(90, 30, 130);
+}
+
+.catalog-card {
+    margin-bottom: 30px;
+}
+
+.catalog-card img {
+    border: 2px solid rgb(180, 140, 220);
+    border-radius: 10px;
+}
+
+.catalog-card a {
+    color: rgb(100, 30, 150);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.catalog-card a:hover {
+    text-decoration: underline;
+}
+
+.section-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: rgb(225, 210, 245);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.short-description {
+    color: rgb(130, 70, 170);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.full-description {
+    color: rgb(70, 50, 100);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.specs-list {
+    color: rgb(80, 20, 120);
+    font-size: 16px;
+    font-family: Georgia, serif;
+    background-color: rgb(240, 225, 250);
+    padding: 20px 20px 20px 40px;
+    border-radius: 10px;
+    list-style-image: url("images/star.png");
+}
+
+.character-image {
+    border-radius: 12px;
+    border: 3px solid rgb(200, 160, 230);
+}
+
+footer {
+    margin-top: 25px;
+    color: rgb(90, 70, 110);
+    font-size: 14px;
+}
+
+select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgb(180, 140, 220);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: rgb(180, 120, 220);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(140, 80, 190);
+}
+
+#cart {
+    background-color: rgb(240, 225, 250);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+}
