@@ -1,57 +1,85 @@
+// === Глобальная корзина ===
 let cart = [];
 
-const addButtons = document.querySelectorAll(".add-to-cart");
-const cartItems = document.querySelector("#cart-items");
-const totalElement = document.querySelector("#total");
-const clearCartButton = document.querySelector("#clear-cart");
-const payButton = document.querySelector("#pay-button");
-const categoryFilter = document.querySelector("#categoryFilter");
-const products = document.querySelectorAll(".product");
 
+// === СОХРАНЕНИЕ в LocalStorage ===
+function saveCartToLocalStorage() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+// === ЗАГРУЗКА из LocalStorage ===
+function loadCartFromLocalStorage() {
+    const savedCart = localStorage.getItem("cart");
+
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        renderCart();
+    }
+}
+
+
+// === Подсчёт суммы (стрелочная функция) ===
 const calculateTotal = () => {
     let total = 0;
-    cart.forEach(item => {
-        total += item.price;
-    });
+    cart.forEach(item => total += item.price);
     return total;
 };
 
+
+// === Удаление товара ===
+const removeFromCart = (index) => {
+    cart.splice(index, 1);
+    renderCart();
+    saveCartToLocalStorage();
+};
+
+
+// === Очистка корзины ===
+const clearCart = () => {
+    cart = [];
+    renderCart();
+    saveCartToLocalStorage();
+};
+
+
+// === Отрисовка корзины ===
 const renderCart = () => {
-    cartItems.innerHTML = "";
+    const cartList = document.querySelector("#cart-items");
+    const totalElement = document.querySelector("#total");
+
+    if (!cartList || !totalElement) return;
+
+    cartList.innerHTML = "";
 
     cart.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = item.name + " — " + item.price + " руб. ";
+        li.textContent = `${item.name} — ${item.price} руб. `;
 
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Удалить";
-        deleteButton.addEventListener("click", () => {
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Удалить";
+        deleteBtn.addEventListener("click", () => {
             removeFromCart(index);
         });
 
-        li.appendChild(deleteButton);
-        cartItems.appendChild(li);
+        li.appendChild(deleteBtn);
+        cartList.appendChild(li);
     });
 
     totalElement.textContent = "Итого: " + calculateTotal() + " руб.";
 };
 
+
+// === Добавление товара ===
 const addToCart = (product) => {
     cart.push(product);
     renderCart();
+    saveCartToLocalStorage();
 };
 
-const removeFromCart = (index) => {
-    cart.splice(index, 1);
-    renderCart();
-};
 
-const clearCart = () => {
-    cart = [];
-    renderCart();
-};
-
-addButtons.forEach(button => {
+// === Обработчики кнопок "Добавить" ===
+document.querySelectorAll(".add-to-cart").forEach(button => {
     button.addEventListener("click", () => {
         const productElement = button.closest(".product");
 
@@ -64,29 +92,50 @@ addButtons.forEach(button => {
     });
 });
 
-clearCartButton.addEventListener("click", () => {
-    clearCart();
-});
 
-payButton.addEventListener("click", () => {
-    if (cart.length === 0) {
-        alert("Корзина пуста");
-    } else {
-        alert("Покупка прошла успешно!");
-        clearCart();
-    }
-});
+// === Кнопка "Очистить корзину" ===
+const clearCartButton = document.querySelector("#clear-cart");
+if (clearCartButton) {
+    clearCartButton.addEventListener("click", clearCart);
+}
 
-categoryFilter.addEventListener("change", () => {
-    const selectedCategory = categoryFilter.value;
 
-    products.forEach(product => {
-        const productCategory = product.dataset.category;
-
-        if (selectedCategory === "all" || productCategory === selectedCategory) {
-            product.style.display = "block";
+// === Кнопка "Оплатить" ===
+const payButton = document.querySelector("#pay-button");
+if (payButton) {
+    payButton.addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Корзина пуста!");
         } else {
-            product.style.display = "none";
+            alert("Покупка прошла успешно!");
+            clearCart();
         }
     });
+}
+
+
+// === ФИЛЬТР товаров ===
+const filter = document.querySelector("#categoryFilter");
+const products = document.querySelectorAll(".product");
+
+if (filter) {
+    filter.addEventListener("change", () => {
+        const selected = filter.value;
+
+        products.forEach(product => {
+            const category = product.dataset.category;
+
+            if (selected === "all" || category === selected) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+}
+
+
+// === ЗАГРУЗКА при старте страницы ===
+document.addEventListener("DOMContentLoaded", () => {
+    loadCartFromLocalStorage();
 });
