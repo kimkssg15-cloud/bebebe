@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(245, 235, 255);
+    color: rgb(60, 40, 80);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: rgb(120, 40, 160);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-box {
+    background-color: rgb(240, 225, 250);
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+}
+
+button {
+    background-color: rgb(170, 90, 210);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.error {
+    color: red;
+}

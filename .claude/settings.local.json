@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cmd /c \"dir C:\\\\xampp\\\\htdocs\\\\winx_react_pr7_pr8 /b\")",
+      "PowerShell(cmd /c \"dir C:\\\\xampp\\\\htdocs\\\\winx_react_pr7_pr8\\\\src /b /s\")"
+    ]
+  }
+}

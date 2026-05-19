@@ -1,0 +1,6 @@
+2026-05-08 18:23:36 | ip=127.0.0.1 | login=bloom | action=SUCCESS_LOGIN
+2026-05-09 17:22:29 | ip=127.0.0.1 | login=bloom | action=LOGOUT
+2026-05-09 17:25:23 | ip=127.0.0.1 | login=bloom | action=SUCCESS_LOGIN
+2026-05-09 17:26:22 | ip=127.0.0.1 | login=bloom | action=LOGOUT
+2026-05-09 17:26:26 | ip=127.0.0.1 | login=bloom | action=FAIL_LOGIN
+2026-05-18 22:31:45 | ip=127.0.0.1 | login=ыввыа | action=FAIL_LOGIN_NO_USER
