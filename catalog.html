@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб Винкс: Каталог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+    </ul>
+</nav>
+
+<hr>
+
+<h1>Каталог фей Клуба Винкс</h1>
+
+<p class="full-description">
+    В каталоге представлены все главные участницы клуба Винкс.
+</p>
+
+<h2 class="section-title">Фильтр</h2>
+
+<select id="categoryFilter">
+    <option value="all">Все</option>
+    <option value="leader">Лидер</option>
+    <option value="light">Свет</option>
+    <option value="nature">Природа</option>
+    <option value="music">Музыка</option>
+    <option value="technology">Технологии</option>
+    <option value="water">Вода</option>
+</select>
+
+<hr>
+
+<!-- ТОВАРЫ -->
+
+<div class="catalog-card product" data-name="Блум" data-price="1200" data-category="leader">
+    <h2><a href="bloom.html">Блум</a></h2>
+    <p class="short-description">Фея Огня Дракона</p>
+    <img src="images/bloom_small.jpg" alt="Блум — Фея Огня Дракона" width="200">
+    <p><b>Цена:</b> 1200 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<div class="catalog-card product" data-name="Стелла" data-price="1100" data-category="light">
+    <h2><a href="stella.html">Стелла</a></h2>
+    <p class="short-description">Фея света</p>
+    <img src="images/stella_small.jpg" alt="Стелла — Фея Солнца и Луны" width="200">
+    <p><b>Цена:</b> 1100 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<div class="catalog-card product" data-name="Флора" data-price="1000" data-category="nature">
+    <h2><a href="flora.html">Флора</a></h2>
+    <p class="short-description">Фея природы</p>
+    <img src="images/flora_small.jpg" alt="Флора — Фея природы" width="200">
+    <p><b>Цена:</b> 1000 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<div class="catalog-card product" data-name="Муза" data-price="1050" data-category="music">
+    <h2><a href="musa.html">Муза</a></h2>
+    <p class="short-description">Фея музыки</p>
+    <img src="images/musa_small.jpg" alt="Муза — Фея музыки" width="200">
+    <p><b>Цена:</b> 1050 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<div class="catalog-card product" data-name="Текна" data-price="1150" data-category="technology">
+    <h2><a href="tecna.html">Текна</a></h2>
+    <p class="short-description">Фея технологий</p>
+    <img src="images/tecna_small.jpg" alt="Текна — Фея технологий" width="200">
+    <p><b>Цена:</b> 1150 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<div class="catalog-card product" data-name="Лейла" data-price="1080" data-category="water">
+    <h2><a href="layla.html">Лейла</a></h2>
+    <p class="short-description">Фея воды</p>
+    <img src="images/layla_small.jpg" alt="Лейла — Фея воды и движения" width="200">
+    <p><b>Цена:</b> 1080 руб.</p>
+    <button class="add-to-cart">Добавить в корзину</button>
+</div>
+
+<hr>
+
+<!-- КОРЗИНА -->
+
+<h2 class="section-title">Корзина</h2>
+
+<ul id="cart-items"></ul>
+
+<p id="total">Итого: 0 руб.</p>
+
+<button id="clear-cart">Очистить корзину</button>
+<button id="pay-button">Оплатить</button>
+
+<hr>
+
+<footer>
+    <p>&copy; 2026 Клуб Винкс. Все права защищены.</p>
+</footer>
+
+<!-- ПОДКЛЮЧЕНИЕ JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
